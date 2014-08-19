@@ -1,0 +1,11 @@
+{
+  "name": "merge-dir",
+  "version": "0.1.0",
+  "devDependencies": {
+    "should": "^4.0.4",
+    "rimraf": "^2.2.8"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --check-leaks test/"
+  }
+}
