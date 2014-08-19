@@ -1,5 +1,5 @@
 {
-  "name": "merge-dir",
+  "name": "flatten",
   "version": "0.1.0",
   "devDependencies": {
     "should": "^4.0.4",

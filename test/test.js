@@ -16,7 +16,7 @@ var one = resolve(testDir, 'one');
 var lvl0 = [];
 var lvl1 = [];
 
-describe('merge-dir', function(){
+describe('flatten', function(){
 
   before(function(){
     var i, lvl, path, file, name, msg;

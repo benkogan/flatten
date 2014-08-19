@@ -1,5 +1,5 @@
-merge-dir
-=========
+flatten
+=======
 
 **Work in progress.** Not yet finished to a working state.
 
