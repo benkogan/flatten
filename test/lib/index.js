@@ -29,7 +29,7 @@ function build(parent, level) {
 
       if (level > 0) {
         fs.mkdirSync(path);
-        _build(path, --level);
+        _build(path, level - 1);
       }
 
     }
