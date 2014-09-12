@@ -1,17 +1,24 @@
 #!/usr/bin/env node
 
-var commander = require('commander');
-var lib = require('./lib');
+var program = require('commander');
+var version = require('../package.json').version;
+var lib = require('..');
 
-// TODO: get version from package.json
+// TODO: something isnt right here...
+// TODO: deal with all flag input cases (like one but not the other)
 
 program
-  .version('0.1.0')
-  .option('-p, --path', 'Path from which to begin merging')
-  .option('-o, --output', 'Path of dir in which to output merged files')
+  .version(version)
+  .option('-p, --path [path]', 'Path from which to begin merging', 'string')
+  .option('-o, --output [path]', 'Path of dir in which to output merged files', 'string')
   .parse(process.argv);
 
-if (!program.path && program.output) return process.help();
+if (!program.path && !program.output) return program.help();
 
-// TODO: else execute merge op
+console.log('  Moving from <' + program.path + '> to <' + program.output + '>');
+
+lib.traverseSync(program.path, function(file){
+  var dest = program.output;
+  lib.cpSync(file, dest);
+});
 
